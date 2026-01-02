@@ -5,11 +5,19 @@ import sys
 import tomllib
 
 BASE_PATH = os.getcwd()
-TOML_PATH = 'tools/config.toml'
+TOML_PATH = 'config/config.toml'
 
 
 def toml_decorder():
-  toml_path = os.path.join(BASE_PATH, TOML_PATH)
-  with toml_path.open("rb") as f:
+  toml_path = os.path.join(BASE_PATH, os.path.normpath(TOML_PATH))
+
+  with open(toml_path, "rb") as f:
         return tomllib.load(f)
 
+def main():
+    toml = toml_decorder()
+    print(toml)
+
+
+if __name__ == "__main__":
+    main()

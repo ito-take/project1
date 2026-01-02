@@ -1,0 +1,6 @@
+[CI]
+  [[CI.job]]
+
+[common]
+  script_version = "develop"
+  workflow_version = "develop"
